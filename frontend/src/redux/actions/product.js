@@ -114,13 +114,16 @@ export const deleteProduct = (id) => async (dispatch) => {
 };
 
 // get all products
-export const getAllProducts = () => async (dispatch) => {
+export const getAllProducts = (queryParams) => async (dispatch) => {
   try {
     dispatch({
       type: "getAllProductsRequest"
     });
 
-    const { data } = await axios.get(`${server}/product/get-all-products`);
+    const queryString = new URLSearchParams(queryParams).toString();
+    const { data } = await axios.get(`${server}/product/get-all-products?${queryString}`);
+
+    console.log("API Response:", data); // Add this line for debugging
     dispatch({
       type: "getAllProductsSuccess",
       payload: data.products

@@ -1,5 +1,4 @@
-import React, { useState,useRef, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "../../styles/styles";
 import { categoriesData, productData } from "../../static/data";
 import {
@@ -7,6 +6,7 @@ import {
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { FiChevronDown } from 'react-icons/fi';
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import { RxCross1 } from "react-icons/rx";
+import { Link, useParams } from 'react-router-dom';
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -30,7 +31,10 @@ const Header = ({ activeHeading }) => {
   const [openCart, setOpenCart] = useState(false);
   const [openWishlist, setOpenWishlist] = useState(false);
   const [open, setOpen] = useState(false);
-  
+  const [openAvatarDropdown, setOpenAvatarDropdown] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { orderId } = useParams();
+
   const searchInputRef = useRef(null);
 
   const handleSearchChange = (e) => {
@@ -63,8 +67,8 @@ const Header = ({ activeHeading }) => {
     };
     if (open) {
       document.addEventListener("click", handleClickOutside);
-  
-  
+
+
     } else {
       document.removeEventListener("click", handleClickOutside);
     }
@@ -84,7 +88,7 @@ const Header = ({ activeHeading }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
+
 
   return (
     <>
@@ -92,7 +96,7 @@ const Header = ({ activeHeading }) => {
         <div className="hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
             <Link to="/">
-            <h1 style={{ color: '#142337', fontSize: '44px', fontWeight: 'bold' }}>vaymp</h1>
+              <h1 style={{ color: '#142337', fontSize: '44px', fontWeight: 'bold' }}>vaymp</h1>
             </Link>
           </div>
           {/* search box */}
@@ -140,9 +144,8 @@ const Header = ({ activeHeading }) => {
         </div>
       </div>
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -202,7 +205,7 @@ const Header = ({ activeHeading }) => {
               </div>
             </div>
 
-            <div className={`${styles.noramlFlex}`}>
+            {/* <div className={`${styles.noramlFlex}`}>
               <div className="relative cursor-pointer mr-[15px]">
                 {isAuthenticated ? (
                   <Link to="/profile">
@@ -211,15 +214,42 @@ const Header = ({ activeHeading }) => {
                       className="w-[35px] h-[35px] rounded-full"
                       alt=""
                     />
-                  </Link>
-                ) : (
-                  <Link to="/login">
-                    <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
-                  </Link>
-                )}
+                  </Link> */}
+            <div className={`${styles.noramlFlex}`}>
+
+              <div
+                className="container mx-auto bg-blue p-2 rounded-lg shadow-lg flex items-center justify-between cursor-pointer"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                <div className="relative">
+                  {isAuthenticated ? (
+                    <div className="relative flex items-center">
+                      <div className="flex items-center cursor-pointer">
+                        <img
+                          src={`${user.avatar?.url}`}
+                          className="w-8 h-8 rounded-full"
+                          alt=""
+                        />
+                        <span className="ml-2 text-white">{user.firstName}</span>
+                      </div>
+                      <FiChevronDown className="ml-2 text-white" /> {/* Dropdown icon */}
+                      {isDropdownOpen && (
+                        <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-md z-20">
+                          {/* Dropdown content */}
+                          <Link to="/profile" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Profile</Link>
+                          <Link to={`/user/track/order/${orderId}`} className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Orders</Link> {/* Add Orders link */}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link to="/login">
+                      <CgProfile size={30} color="rgb(255 255 255 / 83%)" />
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
-
             {/* cart popup */}
             {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
 
@@ -233,9 +263,8 @@ const Header = ({ activeHeading }) => {
 
       {/* mobile header */}
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        }
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          }
       w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
@@ -248,7 +277,7 @@ const Header = ({ activeHeading }) => {
           </div>
           <div>
             <Link to="/">
-            <h1 style={{ color: '#142337', fontSize: '44px', fontWeight: 'bold' }}>vaymp</h1>
+              <h1 style={{ color: '#142337', fontSize: '44px', fontWeight: 'bold' }}>vaymp</h1>
             </Link>
           </div>
           <div>
@@ -294,33 +323,34 @@ const Header = ({ activeHeading }) => {
                 />
               </div>
 
-{/* Search bar */}
-<div className="my-8 w-[92%] m-auto h-[40px relative]" ref={searchInputRef}>                <input
+              {/* Search bar */}
+              <div className="my-8 w-[92%] m-auto h-[40px relative]" ref={searchInputRef}>
+                <input
                   type="search"
                   placeholder="Search Product..."
                   className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
-{searchData && searchData.length > 0 && (                  <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
-                    {searchData.map((i) => {
-                      const d = i.name;
+                {searchData && searchData.length > 0 && (<div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
+                  {searchData.map((i) => {
+                    const d = i.name;
 
-                      const Product_name = d.replace(/\s+/g, "-");
-                      return (
-                        <Link to={`/product/${i._id}`}>
-                          <div className="flex items-center">
-                            <img
-                              src={i.image_Url?.[0]?.url}
-                              alt=""
-                              className="w-[50px] mr-2"
-                            />
-                            <h5>{i.name}</h5>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
+                    const Product_name = d.replace(/\s+/g, "-");
+                    return (
+                      <Link to={`/product/${i._id}`}>
+                        <div className="flex items-center">
+                          <img
+                            src={i.image_Url?.[0]?.url}
+                            alt=""
+                            className="w-[50px] mr-2"
+                          />
+                          <h5>{i.name}</h5>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
                 )}
               </div>
 

@@ -30,8 +30,8 @@ export const navItems = [
   export const brandingData = [
     {
       id: 1,
-      title: "Free Shipping",
-      Description: "From all orders over 100$",
+      title: "Shipping",
+      Description: "Max shipping charge",
       icon: (
         <svg
           width="36"
@@ -193,20 +193,20 @@ export const navItems = [
   
   // categories data
   export const categoriesData = [
-    {
-      id: 1,
-      title: "Computers and Laptops",
-      subTitle: "",
-      image_Url:
-        "https://cdn.shopify.com/s/files/1/1706/9177/products/NEWAppleMacbookProwithM1ProChip14InchLaptop2021ModelMKGQ3LL_A_16GB_1TBSSD_custommacbd.jpg?v=1659592838",
-    },
-    {
-      id: 2,
-      title: "cosmetics and body care",
-      subTitle: "",
-      image_Url:
-        "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-07/kosme1.png",
-    },
+    // {
+    //   id: 1,
+    //   title: "Computers and Laptops",
+    //   subTitle: "",
+    //   image_Url:
+    //     "https://cdn.shopify.com/s/files/1/1706/9177/products/NEWAppleMacbookProwithM1ProChip14InchLaptop2021ModelMKGQ3LL_A_16GB_1TBSSD_custommacbd.jpg?v=1659592838",
+    // },
+    // {
+    //   id: 2,
+    //   title: "cosmetics and body care",
+    //   subTitle: "",
+    //   image_Url:
+    //     "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-07/kosme1.png",
+    // },
     {
       id: 3,
       title: "Accesories",
@@ -228,40 +228,40 @@ export const navItems = [
       image_Url:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
     },
-    {
-      id: 6,
-      title: "Gifts",
-      subTitle: "",
-      image_Url:
-        "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
-    },
-    {
-      id: 7,
-      title: "Pet Care",
-      subTitle: "",
-      image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
-    },
-    {
-      id: 8,
-      title: "Mobile and Tablets",
-      subTitle: "",
-      image_Url:
-        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mpwp3tua-apple-iphone-14-256gb-mavi-mpwp3tua-637986832343472449.jpg",
-    },
-    {
-      id: 9,
-      title: "Music and Gaming",
-      subTitle: "",
-      image_Url:
-        "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
-    },
-    {
-      id: 10,
-      title: "Others",
-      subTitle: "",
-      image_Url:
-        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
-    },
+    // {
+    //   id: 6,
+    //   title: "Gifts",
+    //   subTitle: "",
+    //   image_Url:
+    //     "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+    // },
+    // {
+    //   id: 7,
+    //   title: "Pet Care",
+    //   subTitle: "",
+    //   image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
+    // },
+    // {
+    //   id: 8,
+    //   title: "Mobile and Tablets",
+    //   subTitle: "",
+    //   image_Url:
+    //     "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mpwp3tua-apple-iphone-14-256gb-mavi-mpwp3tua-637986832343472449.jpg",
+    // },
+    // {
+    //   id: 9,
+    //   title: "Music and Gaming",
+    //   subTitle: "",
+    //   image_Url:
+    //     "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
+    // },
+    // {
+    //   id: 10,
+    //   title: "Others",
+    //   subTitle: "",
+    //   image_Url:
+    //     "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    // },
   ];
 
 
@@ -584,168 +584,168 @@ export const navItems = [
       type: "Baby Girls",
     }
   ];
-  // export const size = [
-  //   {
-  //     id: 1,
-  //     type: "2XS",
-  //   },
-  //   {
-  //     id: 2,
-  //     type: "XS",
-  //   },
-  //   {
-  //     id: 3,
-  //     type: "S",
-  //   },
-  //   {
-  //     id: 4,
-  //     type: "M",
-  //   },
-  //   {
-  //     id: 5,
-  //     type: "L",
-  //   },
-  //   {
-  //     id: 6,
-  //     type: "XL",
-  //   },
-  //   {
-  //     id: 7,
-  //     type: "2XL",
-  //   },
-  //   {
-  //     id: 8,
-  //     type: "3XL",
-  //   },
-  //   {
-  //     id: 9,
-  //     type: "4XL",
-  //   },
-  //   {
-  //     id: 10,
-  //     type: "5XL",
-  //   },
-  //   {
-  //     id: 11,
-  //     type: "6XL",
-  //   },
-  //   {
-  //     id: 12,
-  //     type: "7XL",
-  //   },
-  //   {
-  //     id: 13,
-  //     type: "8XL",
-  //   },
-  //   {
-  //     id: 14,
-  //     type: "0 - 1 Month",
-  //   },
-  //   {
-  //     id: 15,
-  //     type: "1 - 2 Months",
-  //   },
-  //   {
-  //     id: 16,
-  //     type: "2 - 3 Months",
-  //   },
-  //   {
-  //     id: 17,
-  //     type: "3 - 4 Months",
-  //   },
-  //   {
-  //     id: 18,
-  //     type: "4 - 5 Months",
-  //   },
-  //   {
-  //     id: 19,
-  //     type: "5 - 6 Months",
-  //   },
-  //   {
-  //     id: 20,
-  //     type: "6 - 7 Months",
-  //   },
-  //   {
-  //     id: 21,
-  //     type: "7 - 8 Months",
-  //   },
-  //   {
-  //     id: 22,
-  //     type: "8 - 9 Months",
-  //   },
-  //   {
-  //     id: 23,
-  //     type: "9 - 10 Months",
-  //   },
-  //   {
-  //     id: 24,
-  //     type: "10 - 11 Months",
-  //   },
-  //   {
-  //     id: 25,
-  //     type: "11 - 12 Months",
-  //   },
-  //   {
-  //     id: 26,
-  //     type: "1 - 2 Years",
-  //   },
-  //   {
-  //     id: 27,
-  //     type: "2 - 3 Years",
-  //   },
-  //   {
-  //     id: 28,
-  //     type: "3 - 4 Years",
-  //   },
-  //   {
-  //     id: 29,
-  //     type: "4 - 5 Years",
-  //   },
-  //   {
-  //     id: 30,
-  //     type: "5 - 6 Years",
-  //   },
-  //   {
-  //     id: 31,
-  //     type: "6 - 7 Years",
-  //   },
-  //   {
-  //     id: 32,
-  //     type: "7 - 8 Years",
-  //   },
-  //   {
-  //     id: 33,
-  //     type: "8 - 9 Years",
-  //   },
-  //   {
-  //     id: 34,
-  //     type: "9 - 10 Years",
-  //   },
-  //   {
-  //     id: 35,
-  //     type: "10 - 11 Years",
-  //   },
-  //   {
-  //     id: 36,
-  //     type: "11 - 12 Years",
-  //   },
-  //   {
-  //     id: 37,
-  //     type: "12 - 13 Years",
-  //   },
-  //   {
-  //     id: 38,
-  //     type: "13 - 14 Years",
-  //   },
-  //   {
-  //     id: 39,
-  //     type: "14 - 15 Years",
-  //   },
-  //   {
-  //     id: 40,
-  //     type: "15 - 16 Years",
-  //   }
-  // ];
+  export const size = [
+    {
+      id: 1,
+      type: "2XS",
+    },
+    {
+      id: 2,
+      type: "XS",
+    },
+    {
+      id: 3,
+      type: "S",
+    },
+    {
+      id: 4,
+      type: "M",
+    },
+    {
+      id: 5,
+      type: "L",
+    },
+    {
+      id: 6,
+      type: "XL",
+    },
+    {
+      id: 7,
+      type: "2XL",
+    },
+    {
+      id: 8,
+      type: "3XL",
+    },
+    {
+      id: 9,
+      type: "4XL",
+    },
+    {
+      id: 10,
+      type: "5XL",
+    },
+    {
+      id: 11,
+      type: "6XL",
+    },
+    {
+      id: 12,
+      type: "7XL",
+    },
+    {
+      id: 13,
+      type: "8XL",
+    },
+    {
+      id: 14,
+      type: "0 - 1 Month",
+    },
+    {
+      id: 15,
+      type: "1 - 2 Months",
+    },
+    {
+      id: 16,
+      type: "2 - 3 Months",
+    },
+    {
+      id: 17,
+      type: "3 - 4 Months",
+    },
+    {
+      id: 18,
+      type: "4 - 5 Months",
+    },
+    {
+      id: 19,
+      type: "5 - 6 Months",
+    },
+    {
+      id: 20,
+      type: "6 - 7 Months",
+    },
+    {
+      id: 21,
+      type: "7 - 8 Months",
+    },
+    {
+      id: 22,
+      type: "8 - 9 Months",
+    },
+    {
+      id: 23,
+      type: "9 - 10 Months",
+    },
+    {
+      id: 24,
+      type: "10 - 11 Months",
+    },
+    {
+      id: 25,
+      type: "11 - 12 Months",
+    },
+    {
+      id: 26,
+      type: "1 - 2 Years",
+    },
+    {
+      id: 27,
+      type: "2 - 3 Years",
+    },
+    {
+      id: 28,
+      type: "3 - 4 Years",
+    },
+    {
+      id: 29,
+      type: "4 - 5 Years",
+    },
+    {
+      id: 30,
+      type: "5 - 6 Years",
+    },
+    {
+      id: 31,
+      type: "6 - 7 Years",
+    },
+    {
+      id: 32,
+      type: "7 - 8 Years",
+    },
+    {
+      id: 33,
+      type: "8 - 9 Years",
+    },
+    {
+      id: 34,
+      type: "9 - 10 Years",
+    },
+    {
+      id: 35,
+      type: "10 - 11 Years",
+    },
+    {
+      id: 36,
+      type: "11 - 12 Years",
+    },
+    {
+      id: 37,
+      type: "12 - 13 Years",
+    },
+    {
+      id: 38,
+      type: "13 - 14 Years",
+    },
+    {
+      id: 39,
+      type: "14 - 15 Years",
+    },
+    {
+      id: 40,
+      type: "15 - 16 Years",
+    }
+  ];
   
   // product Data
   export const productData = [
